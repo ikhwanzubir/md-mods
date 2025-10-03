@@ -34,7 +34,7 @@ main() {
     
     # Check if all required files and folders are present
     echo "Checking for required files and folders..."
-    local required_items=(".claude" "scripts" "CLAUDE.md")
+    local required_items=("CLAUDE.md")
     local all_present=true
     
     for item in "${required_items[@]}"; do
@@ -45,29 +45,21 @@ main() {
     
     # If any required item is missing, exit
     if [[ "$all_present" == "false" ]]; then
-        echo "Not all required files and folders are present. Exiting."
+        echo "No CLAUDE.md file detected. Exiting."
         exit 1
     fi
     
-    echo "All required files and folders are present. Proceeding with cleanup..."
-    
-    # Delete specified folders
-    echo "Deleting specified folders..."
-    local folders_to_delete=(".git" ".claude" "scripts")
-    
-    for folder in "${folders_to_delete[@]}"; do
-        safe_remove "$folder" "directory"
-    done
+    echo "CLAUDE.md file detected. Proceeding with cleanup..."
     
     # Delete specified files  
     echo "Deleting specified files..."
-    local files_to_delete=("CLAUDE.md" "LICENSE")
+    local files_to_delete=("CLAUDE.md")
     
     for file in "${files_to_delete[@]}"; do
         safe_remove "$file" "file"
     done
     
-    echo "✅ Markdown files cleanup completed successfully!"
+    echo "✅ CLAUDE.md cleanup completed successfully!"
 }
 
 # Run main function

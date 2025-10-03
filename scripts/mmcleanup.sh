@@ -12,7 +12,7 @@ check_exists() {
 # Check if all required files and folders are present
 echo "Checking for required files and folders..."
 
-required_items=(".claude" "scripts" "CLAUDE.md")
+required_items=("CLAUDE.md")
 all_present=true
 
 for item in "${required_items[@]}"; do
@@ -23,28 +23,15 @@ done
 
 # If any required item is missing, exit
 if [ "$all_present" = false ]; then
-    echo "Not all required files and folders are present. Exiting."
+    echo "No CLAUDE.md file detected. Exiting."
     exit 1
 fi
 
-echo "All required files and folders are present. Proceeding with cleanup..."
-
-# Delete specified folders
-echo "Deleting specified folders..."
-folders_to_delete=(".git" ".claude" "scripts")
-
-for folder in "${folders_to_delete[@]}"; do
-    if [ -d "$folder" ]; then
-        rm -rf "$folder"
-        echo "Deleted folder: $folder"
-    else
-        echo "Warning: Folder $folder not found."
-    fi
-done
+echo "CLAUDE.md file detected. Proceeding with cleanup..."
 
 # Delete specified files
 echo "Deleting specified files..."
-files_to_delete=("CLAUDE.md" "LICENSE")
+files_to_delete=("CLAUDE.md")
 
 for file in "${files_to_delete[@]}"; do
     if [ -f "$file" ]; then
@@ -55,4 +42,4 @@ for file in "${files_to_delete[@]}"; do
     fi
 done
 
-echo "Markdown files are successfully cleaned"
+echo "CLAUDE.md cleanup completed successfully!"

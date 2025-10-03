@@ -55,16 +55,19 @@ Standard file system operations apply:
 		- "hum": Make the sentences to be leisurely and humorous. Enough to make the sleepy reader engaged.
 		- "imp": Simplify the sentence into important points.
 		- "lay": Simplify the sentence structure and word selection for layman.
+		- "mem": Make the key points easy to remember by giving analogy, using memory castle, repetition, humor or any other methods to help the reader memorize.
 	- For each mod style, create a new folder with the following names:
 		- "sim": "simplified"
 		- "hum": "humor"
 		- "imp": "important"
 		- "lay": "layman"
+		- "mem": "memory"
     - For each new markdown file, add the following as suffix after "-" for the file name:
 		- "sim": "simplified"
 		- "hum": "humor"
 		- "imp": "important"
 		- "lay": "layman"
+		- "mem": "memory"
 
 
 ## Technical Implementation
